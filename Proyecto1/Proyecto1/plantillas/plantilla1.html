@@ -1,0 +1,42 @@
+<html>
+
+<body>
+
+    {% include "barra.html" %}
+
+    <h2 style="color: brown;">
+        Primera plantilla
+    </h2>
+
+    {# Comentario de una sola línea#}
+
+    {% comment %}
+    comentario de
+    varias
+    líneas
+    {% endcomment %}
+
+    {% if nombre_persona.upper == 'CARLOS ANDRES' %}
+    <p>Esto lo construy&oacute;: {{nombre_persona.upper}} {{apellido_persona.upper}}</p>
+    {% endif %}
+    <p>D&iacute;a actual: {{momento_actual.day}}</p>
+    <p>Mes actual: {{momento_actual.day}}</p>
+    <p>mes actual: {{momento_actual.month}}</p>
+    <p>Año actual: {{momento_actual.year}}</p>
+    <p>hora actual: {{momento_actual.time}}</p>
+    <br>
+    <p><b>Temas del curso</b></p>
+    <p>
+        <ul>
+            {% if temas %}
+            {% for tema in temas %}
+            <li>{{tema}} </li>
+            {% endfor %}
+            {% else %}
+            <p>Sin temas para mostrar</p>
+            {% endif %}
+        </ul>
+    </p>
+</body>
+
+</html>
